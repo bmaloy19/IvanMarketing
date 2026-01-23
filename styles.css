@@ -305,6 +305,17 @@ body {
     margin: 10px 0;
 }
 
+/* Utility: make a single link look like plain text (inherit color, no underline) */
+.plain-link {
+    color: inherit;
+    text-decoration: none;
+}
+.plain-link:focus,
+.plain-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* Footer */
 .newspaper-footer {
     margin-top: 40px;
