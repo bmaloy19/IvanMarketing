@@ -1,10 +1,12 @@
 /* ========================================
    LB GROWTH - Nike-Style Layout + Editorial Vibe
-   Clean, Bold, Professional
+   Bold, Personal, Premium
    ======================================== */
 
 /* Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,11 +23,13 @@
     --color-gray-100: #f5f5f5;
     --color-white: #ffffff;
     --color-cream: #faf9f6;
+    --color-gold: #b08d57;
+    --color-gold-light: #c9a96e;
     --color-accent: #111111;
-    
+
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-serif: 'Playfair Display', Georgia, serif;
-    
+
     --transition-fast: 0.2s ease;
     --transition-smooth: 0.3s ease;
 }
@@ -66,7 +70,9 @@ img {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: var(--color-white);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-gray-100);
 }
 
@@ -81,10 +87,13 @@ img {
 }
 
 .nav-logo {
-    font-family: var(--font-serif);
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo-img {
+    height: 50px;
+    width: auto;
 }
 
 .nav-menu {
@@ -133,7 +142,7 @@ img {
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 620px;
 }
 
 .hero-label {
@@ -142,15 +151,15 @@ img {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--color-gray-500);
+    color: var(--color-gold);
     margin-bottom: 20px;
 }
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(48px, 6vw, 72px);
+    font-size: clamp(38px, 4.5vw, 58px);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -1px;
     margin-bottom: 24px;
 }
@@ -160,7 +169,7 @@ img {
     line-height: 1.7;
     color: var(--color-gray-700);
     margin-bottom: 40px;
-    max-width: 480px;
+    max-width: 500px;
 }
 
 .hero-cta {
@@ -175,8 +184,9 @@ img {
 
 .hero-image img {
     width: 100%;
-    height: 600px;
+    height: 650px;
     object-fit: cover;
+    object-position: center 40%;
 }
 
 /* Buttons */
@@ -275,12 +285,12 @@ img {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--color-gray-500);
+    color: var(--color-gold);
     margin-bottom: 16px;
 }
 
 .section-label.light {
-    color: var(--color-gray-300);
+    color: var(--color-gold-light);
 }
 
 .section-title {
@@ -297,6 +307,70 @@ img {
     color: var(--color-gray-700);
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* ========================================
+   WHY LB GROWTH SECTION
+   ======================================== */
+.why-lb-section {
+    padding: 100px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.why-lb-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.why-lb-card {
+    padding: 40px 30px;
+    background: var(--color-cream);
+    transition: var(--transition-smooth);
+    position: relative;
+    text-align: center;
+}
+
+.why-lb-card:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+    transform: translateY(-8px);
+}
+
+.why-lb-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-white);
+    color: var(--color-black);
+    margin-bottom: 24px;
+    transition: var(--transition-smooth);
+}
+
+.why-lb-card:hover .why-lb-icon {
+    background: var(--color-gold);
+    color: var(--color-white);
+}
+
+.why-lb-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+}
+
+.why-lb-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-gray-700);
+}
+
+.why-lb-card:hover p {
+    color: var(--color-gray-300);
 }
 
 /* ========================================
@@ -331,13 +405,13 @@ img {
     font-family: var(--font-serif);
     font-size: 14px;
     font-style: italic;
-    color: var(--color-gray-500);
+    color: var(--color-gold);
     display: block;
     margin-bottom: 20px;
 }
 
 .service-card:hover .service-number {
-    color: var(--color-gray-300);
+    color: var(--color-gold-light);
 }
 
 .service-title {
@@ -399,6 +473,13 @@ img {
     align-items: center;
 }
 
+.about-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    object-position: center top;
+}
+
 .about-title {
     font-family: var(--font-serif);
     font-size: clamp(32px, 4vw, 44px);
@@ -412,34 +493,6 @@ img {
     line-height: 1.8;
     color: var(--color-gray-700);
     margin-bottom: 20px;
-}
-
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.stat-item {
-    text-align: center;
-    padding: 40px 20px;
-    background: var(--color-cream);
-}
-
-.stat-number {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.stat-label {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-gray-500);
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 /* ========================================
@@ -503,84 +556,87 @@ img {
 }
 
 /* ========================================
-   WHY SECTION
+   PARTNERSHIP BANNER
    ======================================== */
-.why-section {
-    padding: 100px 60px;
-    max-width: 1400px;
+.partnership-banner {
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: 120px 60px;
+    text-align: center;
+}
+
+.partnership-banner .banner-content {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+.partnership-banner .banner-title {
+    margin-bottom: 20px;
 }
 
-.why-card {
-    padding: 40px 30px;
-    border: 1px solid var(--color-gray-100);
-    text-align: center;
-    transition: var(--transition-smooth);
-}
-
-.why-card:hover {
-    border-color: var(--color-black);
-}
-
-.why-card h4 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.why-card p {
-    font-size: 15px;
-    color: var(--color-gray-700);
-    line-height: 1.6;
+.partnership-banner .banner-text {
+    margin-bottom: 40px;
 }
 
 /* ========================================
-   CONTACT SECTION
+   CONTACT SECTION — Knights-Style
    ======================================== */
 .contact-section {
     background: var(--color-black);
     color: var(--color-white);
-    padding: 120px 60px;
+    padding: 100px 60px;
 }
 
-.contact-content {
-    max-width: 700px;
+.contact-grid {
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.contact-info-col {
+    padding-top: 10px;
 }
 
 .contact-title {
     font-family: var(--font-serif);
-    font-size: clamp(40px, 5vw, 60px);
+    font-size: clamp(36px, 5vw, 52px);
     font-weight: 700;
     margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .contact-text {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.8;
     color: var(--color-gray-300);
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
-.contact-info {
+.contact-details {
     display: flex;
-    justify-content: center;
-    gap: 60px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 28px;
 }
 
 .contact-item {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-gold);
+    flex-shrink: 0;
 }
 
 .contact-label {
@@ -589,6 +645,8 @@ img {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-gray-500);
+    display: block;
+    margin-bottom: 4px;
 }
 
 .contact-link,
@@ -598,7 +656,84 @@ img {
 }
 
 .contact-link:hover {
+    color: var(--color-gold-light);
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     color: var(--color-gray-300);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 0;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: var(--color-white);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-gray-700);
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: var(--color-gold);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-gray-500);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-submit {
+    align-self: flex-start;
+    background: var(--color-white);
+    color: var(--color-black);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    font-family: var(--font-sans);
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+.btn-submit:hover {
+    background: var(--color-gold);
+    color: var(--color-white);
+    transform: translateY(-2px);
 }
 
 /* ========================================
@@ -623,12 +758,11 @@ img {
     text-align: center;
 }
 
-.footer-logo {
-    font-family: var(--font-serif);
-    font-size: 28px;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 8px;
+.footer-logo-img {
+    height: 60px;
+    width: auto;
+    margin: 0 auto 12px;
+    border-radius: 8px;
 }
 
 .footer-tagline {
@@ -674,35 +808,40 @@ img {
         text-align: center;
         padding: 120px 40px 60px;
     }
-    
+
     .hero-content {
         max-width: 100%;
     }
-    
+
     .hero-subtitle {
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .hero-cta {
         justify-content: center;
     }
-    
+
     .hero-image {
         order: -1;
     }
-    
+
     .hero-image img {
-        height: 400px;
+        height: 500px;
     }
-    
+
     .services-grid,
-    .why-grid {
+    .why-lb-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .about-section {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .contact-grid {
         grid-template-columns: 1fr;
         gap: 60px;
     }
@@ -712,38 +851,39 @@ img {
     .nav-container {
         padding: 0 20px;
     }
-    
+
     .nav-menu {
         display: none;
     }
-    
+
     .hero,
+    .why-lb-section,
     .services-section,
     .about-section,
     .testimonials-section,
-    .why-section,
+    .feature-banner,
+    .partnership-banner,
     .contact-section,
     .site-footer {
         padding-left: 20px;
         padding-right: 20px;
     }
-    
+
     .services-grid,
-    .testimonials-grid,
-    .why-grid {
+    .why-lb-grid,
+    .testimonials-grid {
         grid-template-columns: 1fr;
     }
-    
-    .about-stats {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
+
     .contact-info {
         flex-direction: column;
         gap: 30px;
     }
-    
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
@@ -753,19 +893,23 @@ img {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 36px;
-    }
-    
-    .section-title {
         font-size: 32px;
     }
-    
+
+    .section-title {
+        font-size: 28px;
+    }
+
     .hero-cta {
         flex-direction: column;
         width: 100%;
     }
-    
+
     .btn {
+        width: 100%;
+    }
+
+    .btn-submit {
         width: 100%;
     }
 }
