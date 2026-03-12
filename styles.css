@@ -384,7 +384,7 @@ img {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -737,6 +737,376 @@ img {
 }
 
 /* ========================================
+   CTA BANNER
+   ======================================== */
+.cta-banner {
+    background: var(--color-cream);
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.cta-banner-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-banner-title {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.cta-banner-text {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-gray-700);
+    margin-bottom: 32px;
+}
+
+/* ========================================
+   WHO THIS IS FOR SECTION
+   ======================================== */
+.who-its-for-section {
+    padding: 100px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.who-its-for-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.who-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 28px 24px;
+    background: var(--color-cream);
+    transition: var(--transition-smooth);
+}
+
+.who-card:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+    transform: translateY(-4px);
+}
+
+.who-card:hover p {
+    color: var(--color-gray-300);
+}
+
+.who-card:hover strong {
+    color: var(--color-white);
+}
+
+.who-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    color: var(--color-white);
+    flex-shrink: 0;
+}
+
+.who-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-gray-700);
+    padding-top: 6px;
+}
+
+.who-card strong {
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+/* ========================================
+   GROWTH FRAMEWORK SECTION
+   ======================================== */
+.framework-section {
+    padding: 100px 60px;
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.framework-section .section-header {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+}
+
+.framework-section .section-intro {
+    color: var(--color-gray-300);
+}
+
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    counter-reset: framework;
+}
+
+.framework-step {
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.framework-step:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-gold);
+    transform: translateY(-8px);
+}
+
+.framework-number {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0.6;
+}
+
+.framework-step:hover .framework-number {
+    opacity: 1;
+}
+
+.framework-step h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+}
+
+.framework-step p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-gray-300);
+}
+
+/* ========================================
+   FAQ SECTION
+   ======================================== */
+.faq-section {
+    padding: 100px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.faq-item:first-child {
+    border-top: 1px solid var(--color-gray-100);
+}
+
+.faq-question {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 24px 40px 24px 0;
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    color: var(--color-dark);
+    transition: var(--transition-fast);
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--color-gold);
+    transition: var(--transition-smooth);
+}
+
+.faq-item[open] .faq-question::after {
+    content: '−';
+}
+
+.faq-question:hover {
+    color: var(--color-gold);
+}
+
+.faq-answer {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-gray-700);
+    padding: 0 40px 24px 0;
+}
+
+/* ========================================
+   FOUNDER CREDENTIALS
+   ======================================== */
+.founder-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-gray-100);
+}
+
+.credential {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-gray-700);
+}
+
+.credential svg {
+    color: var(--color-gold);
+    flex-shrink: 0;
+}
+
+/* ========================================
+   CLIENT LOGOS SECTION
+   ======================================== */
+.clients-section {
+    padding: 100px 60px;
+    background: var(--color-cream);
+    text-align: center;
+}
+
+.clients-logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.client-logo-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: 2px solid var(--color-gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+.client-logo-circle:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.client-logo-circle img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.client-logo-placeholder {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-gray-300);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* ========================================
+   CASE STUDY SECTION
+   ======================================== */
+.case-study-section {
+    padding: 100px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.case-study-card {
+    padding: 40px 30px;
+    background: var(--color-cream);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.case-study-card:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+    transform: translateY(-8px);
+}
+
+.case-study-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-white);
+    color: var(--color-black);
+    margin-bottom: 24px;
+    transition: var(--transition-smooth);
+}
+
+.case-study-card:hover .case-study-icon {
+    background: var(--color-gold);
+    color: var(--color-white);
+}
+
+.case-study-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+}
+
+.case-study-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-gray-700);
+}
+
+.case-study-card:hover p {
+    color: var(--color-gray-300);
+}
+
+/* ========================================
    FOOTER
    ======================================== */
 .site-footer {
@@ -839,6 +1209,15 @@ img {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .who-its-for-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .framework-grid,
+    .case-study-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .about-section {
         grid-template-columns: 1fr;
         gap: 60px;
@@ -850,7 +1229,12 @@ img {
     }
 
     .feature-banner,
-    .partnership-banner {
+    .partnership-banner,
+    .cta-banner {
+        padding: 80px 40px;
+    }
+
+    .framework-section {
         padding: 80px 40px;
     }
 }
@@ -890,7 +1274,10 @@ img {
     }
 
     .why-lb-section,
-    .services-section {
+    .services-section,
+    .who-its-for-section,
+    .case-study-section,
+    .clients-section {
         padding: 60px 20px;
     }
 
@@ -903,22 +1290,41 @@ img {
     .testimonials-section,
     .feature-banner,
     .partnership-banner,
+    .cta-banner,
     .contact-section,
     .site-footer {
         padding-left: 20px;
         padding-right: 20px;
     }
 
+    .framework-section,
+    .faq-section {
+        padding: 60px 20px;
+    }
+
     .feature-banner,
-    .partnership-banner {
+    .partnership-banner,
+    .cta-banner {
         padding-top: 60px;
         padding-bottom: 60px;
     }
 
     .services-grid,
     .why-lb-grid,
-    .testimonials-grid {
+    .testimonials-grid,
+    .who-its-for-grid,
+    .framework-grid,
+    .case-study-grid {
         grid-template-columns: 1fr;
+    }
+
+    .client-logo-circle {
+        width: 110px;
+        height: 110px;
+    }
+
+    .clients-logo-grid {
+        gap: 24px;
     }
 
     .form-row {
@@ -933,7 +1339,8 @@ img {
         font-size: 32px;
     }
 
-    .banner-title {
+    .banner-title,
+    .cta-banner-title {
         font-size: 28px;
     }
 
@@ -947,6 +1354,10 @@ img {
 
     .contact-title {
         font-size: 32px;
+    }
+
+    .faq-question {
+        font-size: 16px;
     }
 
     .footer-links {
@@ -989,7 +1400,26 @@ img {
     }
 
     .why-lb-card,
-    .service-card {
+    .service-card,
+    .framework-step,
+    .case-study-card {
         padding: 30px 20px;
+    }
+
+    .who-card {
+        padding: 20px 16px;
+    }
+
+    .cta-banner-title {
+        font-size: 24px;
+    }
+
+    .client-logo-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .client-logo-placeholder {
+        font-size: 10px;
     }
 }
