@@ -990,6 +990,96 @@ img {
 }
 
 /* ========================================
+   PARTNERSHIP PHILOSOPHY SECTION
+   ======================================== */
+.partnership-philosophy-section {
+    background: var(--color-cream);
+    padding: 100px 60px;
+}
+
+.philosophy-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.philosophy-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-gray-700);
+    margin-bottom: 18px;
+}
+
+.philosophy-title {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 28px;
+    margin-top: 12px;
+}
+
+.philosophy-note {
+    font-size: 15px !important;
+    font-weight: 600;
+    color: var(--color-gold) !important;
+    border-left: 3px solid var(--color-gold);
+    padding-left: 16px;
+    margin-top: 24px;
+}
+
+.philosophy-call {
+    background: var(--color-white);
+    padding: 44px 40px;
+    border-top: 3px solid var(--color-gold);
+}
+
+.philosophy-call h3 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.philosophy-call > p {
+    font-size: 16px;
+    color: var(--color-gray-700);
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.call-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding: 0;
+}
+
+.call-list li {
+    font-size: 16px;
+    color: var(--color-gray-700);
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.call-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-gold);
+}
+
+/* ========================================
    CLIENT LOGOS SECTION
    ======================================== */
 .clients-section {
@@ -1237,6 +1327,11 @@ img {
     .framework-section {
         padding: 80px 40px;
     }
+
+    .philosophy-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1277,7 +1372,8 @@ img {
     .services-section,
     .who-its-for-section,
     .case-study-section,
-    .clients-section {
+    .clients-section,
+    .partnership-philosophy-section {
         padding: 60px 20px;
     }
 
